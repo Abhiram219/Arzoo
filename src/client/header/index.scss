@@ -4,7 +4,32 @@ $blue : #008dff;
 .header{
   // Mobile Styling
   @media screen and( max-width : $screen-width) {
+    height: 56px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
 
+    &__titleContainer {
+      display: flex;
+      align-items: center;
+      span{
+        font-size: 24px;
+        font-weight: 700;
+        color: $blue;
+        margin-left: 16px;
+      }
+    }
+
+    &__location {
+     display: none;
+    }
+
+    &__options {
+      display: inline-flex;
+    }
   }
 
   // Desktop Styling
@@ -43,5 +68,21 @@ $blue : #008dff;
     &__options {
 
     }
+  }
+}
+
+
+.desktop-only{
+  // Mobile Styling
+  @media screen and( max-width : $screen-width) {
+    display: none;
+  }
+}
+
+
+.mobile-only{
+  // Desktop Styling
+  @media screen and( min-width : $screen-width) {
+    display: none;
   }
 }

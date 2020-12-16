@@ -1,6 +1,6 @@
 import React, {useState, } from 'react';
 import Header from '../header/index'
-import { StarFilled, LeftCircleFilled, RightCircleFilled } from '@ant-design/icons'
+import { StarFilled, LeftCircleFilled, RightCircleFilled, PlusOutlined, MinusOutlined } from '@ant-design/icons'
 
 import './index.scss'
 
@@ -147,16 +147,7 @@ const Home = () => {
                   <div className="faqs__item" onClick={()=>{handleToggleClick(index)}}> 
                     <div className="faqs__title"> 
                       {item.title}  
-                      <span> {faqToggle[index] ?
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                              <path fill="#000" fillRule="evenodd" d="M4.5 11.5v1h15v-1z"></path>
-                          </svg>
-                          :
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="#000" fillRule="evenodd" d="M11.5 4.5v7h-7v1h7v7h1v-7h7v-1h-7v-7z"></path>
-                          </svg>
-                        } 
-                      </span>
+                      <span> {faqToggle[index] ? <MinusOutlined /> :  <PlusOutlined /> }  </span>
                      </div>
                     
                     {faqToggle[index] ? <div className="faqs__description"> {item.description} </div> : '' }

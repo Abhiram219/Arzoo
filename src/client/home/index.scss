@@ -64,8 +64,8 @@ $green : green;
     }
 
     &__image {
-      width: 100px;
-      height: 100px;
+      width: 16%;
+      height: 100px;  //We can remove this resctrion if img is present so that it adjusts with width
       border: 1px solid $light_black;
     }
 
