@@ -158,20 +158,19 @@ input[type=number] {
 
   // Desktop Styling
   @media screen and( min-width : $screen-width) {
-    // display: inline-flex;
+    display: flex;
     width: 100%;
-    position: relative;
 
     &__container1 {
       width: 40%;
       padding: 16px;
       position: sticky;
+      align-self: flex-start;
       top: 72px;
     }
 
     &__container2 {
       border-left: 8px solid $gray;
-      position: absolute;
       width: calc(60% - 88px);
       top: 0;
       left: 40%;
