@@ -123,7 +123,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="customRow">
+          <div className="customRow" style={{alignItems:'unset'}}>
             <div className="home__highlightsContainer">
                 <div className="home__itemInfoTitle"> Highlights </div>
                 <div className="home__highlightsItemsContainer">
