@@ -32,10 +32,9 @@ const Home = () => {
 
   const handleToggleClick = (index) => {
     let currFaqState = faqToggle;
-    currFaqState[index] = !faqToggle[index];
-    setFaqToggle(currFaqState);
+    currFaqState[index] = !currFaqState[index];
+    setFaqToggle([...currFaqState]);
   }
-
 
 
   return(
@@ -58,13 +57,13 @@ const Home = () => {
               <div className="home__imagesSubContainer">
                 <LeftCircleFilled style={{ fontSize: 32, cursor:'pointer' }}/>
                 {imagesCount.map( (item,index) => {
-                  return <div key={index} className="home__image"> <img></img> </div>
+                  return <div key={index} className="home__image" > <img></img> </div>
                 })}
                 <RightCircleFilled style={{ fontSize: 32, cursor:'pointer' }} />
               </div>
           </div>
 
-          <div style={{width:'100%'}}>
+          <div  className="desktop-only" style={{width:'100%'}}>
             <div className="home__options">
               <div className="home__optionsItem"> Add to Cart </div>
               <div className="home__optionsItem-selected"> Buy Now </div>
@@ -114,12 +113,12 @@ const Home = () => {
             </div>
           </div>
 
-          <p> 1 year manufacture warranty </p>
+          <p style={{fontWeight:500}}> 1 year manufacture warranty </p>
 
           <div className="home__deliveryContainer"> 
             <div className="home__itemInfoTitle"> Delivery </div>
             <div className="home__deliverySubContainer"> 
-              <input type='number' placeholder="Enter pincode" className="home__deliveryInput"></input>  
+              <input type='number' placeholder="Enter pincode" className="home__deliveryInput" maxLength='6'></input>  
               <RightCircleFilled style={{color: '#008dff', fontSize:24}}/> 
             </div>
           </div>
@@ -144,7 +143,7 @@ const Home = () => {
             {
               faqs.map( (item,index) => {
                 return (
-                  <div className="faqs__item" onClick={()=>{handleToggleClick(index)}}> 
+                  <div key={index} className="faqs__item" onClick={()=>{handleToggleClick(index)}}> 
                     <div className="faqs__title"> 
                       {item.title}  
                       <span> {faqToggle[index] ? <MinusOutlined /> :  <PlusOutlined /> }  </span>
@@ -158,6 +157,11 @@ const Home = () => {
           </div>
         </div>
 
+      </div>
+
+      <div className="home__options mobile-only">
+          <div className="home__optionsItem"> Add to Cart </div>
+          <div className="home__optionsItem-selected"> Buy Now </div>
       </div>
 
     </React.Fragment>

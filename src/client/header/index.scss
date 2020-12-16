@@ -1,5 +1,6 @@
 $screen-width : '640px';
 $blue : #008dff;
+$white: #fff;
 
 .header{
   // Mobile Styling
@@ -11,6 +12,10 @@ $blue : #008dff;
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: $white;
 
     &__titleContainer {
       display: flex;
@@ -34,13 +39,17 @@ $blue : #008dff;
 
   // Desktop Styling
   @media screen and( min-width : $screen-width) {
-    height: 82px;
+    height: 72px;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 32px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: $white;
 
     &__titleContainer {
       display: flex;
@@ -75,7 +84,7 @@ $blue : #008dff;
 .desktop-only{
   // Mobile Styling
   @media screen and( max-width : $screen-width) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -83,6 +92,6 @@ $blue : #008dff;
 .mobile-only{
   // Desktop Styling
   @media screen and( min-width : $screen-width) {
-    display: none;
+    display: none !important;
   }
 }
